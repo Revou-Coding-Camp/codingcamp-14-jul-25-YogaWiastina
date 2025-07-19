@@ -1,0 +1,521 @@
+/*FONT*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+/* Reset dasar */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    /* untuk menghindari konten ketimpa navbar */
+    margin: 0;
+}
+
+
+/* Header */
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: transparent;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* MENU UL TENGAH */
+
+nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    font-family: "Poppins", sans-serif;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* HAMBURGER MENU */
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    nav {
+        position: static;
+        transform: none;
+        width: 100%;
+        display: none;
+        margin-top: 1rem;
+    }
+    nav.active {
+        display: block;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .navbar-container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+/* Welcome Section */
+
+.welcome {
+    height: 100vh;
+    /* full screen */
+    background-image: url("../assets/bg.jpg");
+    /* atau "../banner.jpg" */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.welcome::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* semi-transparent overlay */
+    z-index: 1;
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+}
+
+.welcome-content h2 {
+    font-size: 3rem;
+    margin-bottom: 0rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    animation: fadeInDown 1s ease forwards;
+}
+
+.welcome-content p {
+    margin-top: 0;
+    font-size: 1.25rem;
+    color: #eee;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+
+/* Simple fade-in animation */
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Headquarter */
+
+.headquarter {
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.locations {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 1rem;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Message Us */
+
+.message-us {
+    padding: 2rem;
+    background-color: #f8f8f8;
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+form {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+    padding: 0.5rem;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.gender {
+    display: flex;
+    gap: 1rem;
+}
+
+button {
+    padding: 0.5rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+
+/* Output box */
+
+.form-result {
+    flex: 1 1 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    min-height: 200px;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #eee;
+    margin-top: 2rem;
+}
+
+
+/* Responsive */
+
+
+/* Responsive hamburger */
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    nav {
+        display: none;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 1rem 2rem;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav.active {
+        display: block;
+    }
+    .banner {
+        height: 250px;
+    }
+}
+
+section {
+    scroll-margin-top: 80px;
+    /* atau tinggi navbar kamu */
+}
+
+
+/* Profile Section */
+
+.profile-section {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.profile-description {
+    flex: 1 1 40%;
+}
+
+.profile-description h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0rem;
+}
+
+.profile-description p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.profile-gallery {
+    flex: 1 1 55%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.profile-gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    /* Potong foto supaya tetap persegi */
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+    }
+    .profile-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.portfolio-section {
+    padding: 60px 20px;
+    background: #fefefe;
+    text-align: center;
+}
+
+.portfolio-heading h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.portfolio-heading p {
+    font-size: 1rem;
+    color: #666;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.portfolio-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 15px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.linktree-title {
+    margin-top: 60px;
+    font-size: 1.6rem;
+    color: #222;
+}
+
+.linktree-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.linktree-btn {
+    background-color: #111;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    font-weight: 500;
+}
+
+.linktree-btn:hover {
+    background-color: #444;
+}
+
+.footer {
+    background-color: #111;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.footer p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-socials a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: #f39c12;
+    /* Warna highlight saat hover */
+}

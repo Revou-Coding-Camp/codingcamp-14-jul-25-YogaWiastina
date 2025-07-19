@@ -3,8 +3,153 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>My Website</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
-  <body></body>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="navbar-container">
+        <div class="logo">
+          <img src="https://via.placeholder.com/40" alt="Logo" />
+        </div>
+
+        <nav id="navMenu">
+          <ul>
+            <li><a href="#welcome">Home</a></li>
+            <li><a href="#profile">My Profile</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#message-us">Message Us</a></li>
+          </ul>
+        </nav>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+      </div>
+    </header>
+
+    <!-- Welcome Section -->
+    <section class="welcome" id="welcome">
+      <div class="welcome-content">
+        <h2>Yoga Wiastina</h2>
+        <p>Denpasar, Bali.</p>
+      </div>
+    </section>
+
+    <section id="profile" class="profile-section">
+      <div class="profile-container">
+        <div class="profile-description">
+          <h2>About Me</h2>
+          <p>
+            I am a 25-year-old male who has lived in Bali since birth. I
+            graduated with a Bachelor’s degree (S.Kom) in Computer Systems from
+            ITB STIKOM Bali, finishing with a GPA of 3.68.
+          </p>
+          <h2>Thoughts on Coding</h2>
+          <p>
+            I enjoy coding, although I tend to get bored easily. Still, I
+            genuinely appreciate every part of the process when creating a
+            website. I love this activity—its something I truly enjoy. Learning
+            new things every day through coding feels both fun and fulfilling.
+          </p>
+          <h2>hobbies</h2>
+          <p>
+            Aside from coding, Im very passionate about sports—especially
+            football. I deeply love the game and proudly support the mighty Reds
+            from England: Liverpool FC.
+          </p>
+          <h2>Work Experience</h2>
+          <p>Biznet as Network Operation Access (2 years)</p>
+        </div>
+        <div class="profile-gallery">
+          <img src="assets/11.jpeg" alt="Foto 1" />
+          <img src="assets/22.jpeg" alt="Foto 2" />
+          <img src="assets/33.jpg" alt="Foto 3" />
+          <img src="assets/4.jpg" alt="Foto 4" />
+          <img src="assets/44.jpg" alt="Foto 5" />
+          <img src="assets/3.jpg" alt="Foto 6" />
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-section">
+      <div class="portfolio-heading">
+        <h2>My Portfolio</h2>
+        <p>
+          Some of the projects I've worked on — built with passion and purpose.
+        </p>
+      </div>
+      <div class="portfolio-cards">
+        <div class="card reveal">
+          <img src="assets/1.png" alt="Project 1" />
+          <h3>Toward Dusk (Coffee Shop)</h3>
+        </div>
+        <div class="card reveal">
+          <img src="assets/2.png" alt="Project 2" />
+          <h3>Pengelolaan Capaian Kerja Pegawai</h3>
+        </div>
+        <div class="card reveal">
+          <img src="assets/3.png" alt="Project 3" />
+          <h3>E-AGENDA Pegawai</h3>
+        </div>
+        <div class="card reveal">
+          <img src="assets/4.png" alt="Project 4" />
+          <h3>SI Manajemen Mahasiswa Magang</h3>
+        </div>
+      </div>
+
+      <h3 class="linktree-title">Find Me Online</h3>
+      <div class="linktree-links">
+        <a
+          href="https://linktr.ee/yogawiastina"
+          target="_blank"
+          class="linktree-btn"
+          >Touch Me</a
+        >
+      </div>
+    </section>
+
+    <!-- Message Us Section -->
+    <section class="message-us" id="message-us">
+      <h3>Message Us</h3>
+      <div class="form-container">
+        <form id="contactForm">
+          <label for="name">Nama:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="dob">Tanggal Lahir:</label>
+          <input type="date" id="dob" name="dob" required />
+
+          <label>Jenis Kelamin:</label>
+          <div class="gender">
+            <label
+              ><input type="radio" name="gender" value="Laki-laki" required />
+              Laki-Laki</label
+            >
+            <label
+              ><input type="radio" name="gender" value="Perempuan" required />
+              Perempuan</label
+            >
+          </div>
+
+          <label for="message">Pesan:</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+
+        <div class="form-result" id="formResult">
+          <!-- Output result from JS will appear here -->
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2025 Yoga Wiastina. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
 </html>
